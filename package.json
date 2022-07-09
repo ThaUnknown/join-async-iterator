@@ -1,7 +1,7 @@
 {
   "name": "join-async-iterator",
-  "version": "1.0.0",
-  "description": "Join async iterators in order.",
+  "version": "1.0.1",
+  "description": "An async iterator that joins multiple other async iterators in order, one after another.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
