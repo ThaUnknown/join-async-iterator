@@ -61,7 +61,7 @@ import join from 'join-async-iterator'
 
 fileinput.onchange = async ({ target }) => {
   const streams = target.files.map(file => file.stream())
-  for await (const data of join(streams)){
+  for await (const data of join(streams)) {
     console.log('Read data from disk!', data)
   }
   console.log('Finished reading!')
