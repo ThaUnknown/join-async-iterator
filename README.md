@@ -5,7 +5,7 @@
 A majorly simplified version of [multistream](https://www.npmjs.com/package/multistream). Dependency free and very fast. When the first interator ends, the next one starts, and so on, until all iterators are consumed. This accepts anything with an async iterator, be that node streams or anything else.
 
 ## Usage
-`join-async-iterator` accepts any iterator which yields async iterables, so for example an array or streams:
+`join-async-iterator` accepts any iterator which yields async/sync iterables, so for example an array or streams:
 ```js
 import join from 'join-async-iterator'
 import fs from 'fs'
@@ -37,9 +37,8 @@ const streams = [
   function () { // will be executed when the stream is active
     return fs.createReadStream(__dirname + '/numbers/2.txt')
   },
-  function () { // same
-    return fs.createReadStream(__dirname + '/numbers/3.txt')
-  }
+  new Uint8Array([3, 4, 5]), // you can mix and match
+  [6, 7, 8] // any form of iterable
 ]
 
 Readable.from(join(streams)).pipe(process.stdout) // => 123

@@ -1,6 +1,6 @@
 {
   "name": "join-async-iterator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An async iterator that joins multiple other async iterators in order, one after another.",
   "main": "index.js",
   "scripts": {
