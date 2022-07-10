@@ -37,8 +37,9 @@ const streams = [
   function () { // will be executed when the stream is active
     return fs.createReadStream(__dirname + '/numbers/2.txt')
   },
-  new Uint8Array([3, 4, 5]), // you can mix and match
-  [6, 7, 8] // any form of iterable
+  new Uint8Array([3, 4]), // you can mix and match
+  [5, 6], // any form of iterable
+  '78' // even sync ones
 ]
 
 Readable.from(join(streams)).pipe(process.stdout) // => 123
